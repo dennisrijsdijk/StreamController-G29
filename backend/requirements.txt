@@ -1,0 +1,3 @@
+pyudev
+evdev
+streamcontroller_plugin_tools
