@@ -41,3 +41,8 @@ class RotationRange(ActionCore):
 
     def _on_key_down(self, _):
         self.plugin_base.backend.set_rotation_range(self.value_slider.get_value())
+
+    def on_tick(self):
+        self.set_top_label("SET")
+        self.set_center_label("RANGE")
+        self.set_bottom_label(str(round(self.value_slider.get_value(), 0)) + "°")

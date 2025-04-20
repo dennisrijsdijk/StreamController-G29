@@ -12,15 +12,15 @@ class AutocenterStrength(ActionCore):
             action_core=self,
             var_name="value",
             default_value=0,
-            min=0.0,
-            max=100.0,
+            min=0,
+            max=100,
             title="Autocenter Strength",
-            step=0.1,
-            digits=1,
+            step=1,
+            digits=0,
             draw_value=True,
             round_digits=True,
             add_text_entry=True,
-            text_entry_max_length=5,
+            text_entry_max_length=3,
             can_reset=False
         )
 
@@ -40,3 +40,8 @@ class AutocenterStrength(ActionCore):
 
     def _on_key_down(self, _):
         self.plugin_base.backend.set_autocenter_strength(self.value_slider.get_value())
+
+    def on_tick(self):
+        self.set_top_label("SET")
+        self.set_center_label("CENTER")
+        self.set_bottom_label(str(round(self.value_slider.get_value(), 0)) + "%")

@@ -43,6 +43,6 @@ class PluginTemplate(PluginBase):
         self.register(
             plugin_name = "Logitech G29 Control",
             github_repo = "https://github.com/dennisrijsdijk/StreamController-G29",
-            plugin_version = "0.0.1",
+            plugin_version = "0.0.2",
             app_version = "1.1.1-alpha"
         )
